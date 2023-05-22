@@ -1,0 +1,45 @@
+
+.backvid{
+  position: relative;
+}
+.ecriture{
+  position: absolute;
+  bottom: 100px;
+  left: 150px;
+  color: rgb(240, 240, 133);
+}
+.ecriture button{
+  margin: 5px;
+}
+.vid{
+  min-width: 100%;
+  max-width: 100%;
+  height: 650px;
+}
+.add{
+  display: flex;
+  justify-content: center;
+}
+.add h1{
+  color: #991414;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #991414;
+  color: black;
+}
+.footer img{
+  margin-top:-20px;
+  width: 200px;
+  height: 200px;
+}
+.footer h6{
+  margin-top: -40px;
+}
+
+
