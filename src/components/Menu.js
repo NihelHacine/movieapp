@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 function Menu({settext, setstars}) {
 
@@ -12,7 +13,7 @@ function Menu({settext, setstars}) {
     <div >
         <Navbar bg="dark" expand="lg" variant='dark'>
       <Container>
-        <Navbar.Brand href="#" style={{color:'red'}}><img src='logo.png' width={'60px'} height={'80px'} alt=''/> Movies</Navbar.Brand>
+        <Navbar.Brand href="#" style={{color:'red'}}><img src='logo.png' width={'60px'} height={'80px'} alt=''/> <Link to='/' style={{textDecoration:'none', color:'red'}}>Movies</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,11 +21,8 @@ function Menu({settext, setstars}) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
-            <Nav.Link href="#" disabled>
-              Contact
-            </Nav.Link>
+            <Nav.Link href="#action1"><Link to='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Nav.Link>
+            <Nav.Link href="#action2"><Link to='/movies' style={{textDecoration:'none', color:'white'}}>Movies</Link></Nav.Link>
           </Nav>
           <ReactStars style={{marginRight:'20px'}}
     count={5}

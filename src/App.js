@@ -6,6 +6,8 @@ import Firstcomp from './components/Firstcomp';
 import Movieslist from './components/Movieslist';
 import { useState } from 'react';
 import Footer from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import Film from './components/Film';
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
         description:
           "As civil war rages in Africa...",
         rating: 5,
+        video:"https://www.youtube.com/embed/2xb9Ty-1frw",
       },
       {
         name: "13 hours in benghazi",
@@ -25,6 +28,7 @@ function App() {
         description:
           "A security team consisting of six members fights.",
         rating: 4,
+        video:"https://www.youtube.com/embed/5MBjAN7jqsQ",
       },
       {
         name: "The Circle",
@@ -33,6 +37,7 @@ function App() {
         description:
           "Mae is ecstatic to be employed in the biggest tech company in the world. ",
         rating: 2,
+        video:"https://www.youtube.com/embed/hoP3kVx003E",
       },
       {
         name: "Inception",
@@ -41,6 +46,7 @@ function App() {
         description:
           "Cobb steals information from his targets by entering their dreams. ",
         rating: 3,
+        video:"https://www.youtube.com/embed/HcoZbHBDHQA",
       },
       {
         name: "Shutter Island",
@@ -49,6 +55,7 @@ function App() {
         description:
           "Teddy Daniels and Chuck Aule, two US marshals.",
         rating: 5,
+        video:"https://www.youtube.com/watch?v=u0rLKwZCZ9E",
       },
       {
         name: "Warcraft",
@@ -57,6 +64,7 @@ function App() {
         description:
           "A few human survivors must team up with a group of dissenting Orcs",
         rating: 1,
+        video:"https://www.youtube.com/embed/d7THxrD72eE",
       },
       {
         name: "The Godfather",
@@ -65,6 +73,7 @@ function App() {
         description:
           "The Godfather is an American film series.",
         rating: 5,
+        video:"https://www.youtube.com/embed/UaVTIH8mujA",
       },
       {
         name: "Taxi Driver",
@@ -73,6 +82,7 @@ function App() {
         description:
           "Travis, an ex-marine and Vietnam veteran, works as a taxi driver in New York City.",
         rating: 3,
+        video:"https://www.youtube.com/embed/T5IligQP7Fo",
       },
       {
         name: "Fight Club",
@@ -81,6 +91,7 @@ function App() {
         description:
           "Discontented with his capitalistic lifestyle...",
         rating: 5,
+        video:"https://www.youtube.com/embed/bZF10tx8jQM",
       },
       {
         name: "The Lord of the Rings",
@@ -89,6 +100,7 @@ function App() {
         description:
           "The Lord of the Rings is a film series of three epic fantasy adventure films.",
         rating: 5,
+        video:"https://www.youtube.com/embed/HX4KKkSKZAY",
       },
   
       {
@@ -98,6 +110,7 @@ function App() {
         description:
           "A young journalism student and her friends become trapped in an isolated village.",
         rating: 5,
+        video:"https://www.youtube.com/embed/oUfAx52qf54",
       },
       {
         name: "Paper Lives",
@@ -106,6 +119,7 @@ function App() {
         description:
           "Mehmet runs a solid waste warehouse in an impoverished Istanbul neighbourhood.",
         rating: 2,
+        video:"https://www.youtube.com/embed/lXdSaVK-vzs",
       },
       {
         name: "Seaspiracy",
@@ -114,6 +128,7 @@ function App() {
         description:
           "Seaspiracy is a 2021 documentary film ...",
         rating: 5,
+        video: "https://www.youtube.com/embed/1Q5CXN7soQg",
       },      
 ])
 const [text, settext] = useState("");
@@ -121,8 +136,12 @@ const [stars, setstars] = useState(0)
   return (
    <div>
     <Menu settext={settext} setstars={setstars}/>
-    <Firstcomp/>
-    <Movieslist movies={movies} setmovies={setmovies} text={text} stars={stars}/>
+    
+    <Routes>
+      <Route path='/' element={<Firstcomp/>}/>
+      <Route path='/movies' element={<Movieslist movies={movies} setmovies={setmovies} text={text} stars={stars}/>}/>
+      <Route path='/film/:name' element={<Film movies={movies}/>}/>
+    </Routes>
     <Footer/>
    </div>
   );

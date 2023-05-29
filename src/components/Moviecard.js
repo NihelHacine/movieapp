@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 
 function Moviecard({el}) {
@@ -7,11 +8,11 @@ function Moviecard({el}) {
 <div className='body'>
 <div className="card">
         <div className="image">
-          <img src={el.posterurl} />
+        <Link to={`/film/${el.name}`}><img src={el.posterurl} /></Link>
         </div>
         <div className="details">
           <div className="center">
-            <h1>{el.name}</h1>
+            <Link to={`/film/${el.name}`} style={{textDecoration:'none'}}><h1>{el.name}</h1></Link>
             <p>{el.description}</p>
             <ReactStars
     count={5}

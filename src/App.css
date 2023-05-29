@@ -41,5 +41,12 @@
 .footer h6{
   margin-top: -40px;
 }
+.descfilm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 
 
